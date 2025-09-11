@@ -1,0 +1,563 @@
+/* Base Styles */
+:root {
+    --primary: #6a5acd;
+    --secondary: #9370db;
+    --accent: #ff6b6b;
+    --dark: #1a1a2e;
+    --light: #f8f9fa;
+    --pixel-size: 4px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #0f0f1a;
+    color: var(--light);
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(0, 0, 0, 0.2) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Pixel Border */
+.pixel-border {
+    border: 4px solid var(--primary);
+    position: relative;
+    background: var(--dark);
+    box-shadow: 8px 8px 0 var(--accent);
+    margin-bottom: 2rem;
+}
+
+.pixel-border::before,
+.pixel-border::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+}
+
+.pixel-border::before {
+    top: -7px;
+    left: -7px;
+}
+
+.pixel-border::after {
+    top: -7px;
+    right: -7px;
+}
+
+/* Buttons */
+.pixel-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+    outline: none;
+}
+
+.pixel-btn:hover {
+    background: var(--secondary);
+    transform: translate(2px, 2px);
+}
+
+.pixel-btn:active {
+    transform: translate(4px, 4px);
+}
+
+.pixel-btn:disabled {
+    background: #666;
+    color: #999;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.pixel-btn:disabled:hover {
+    background: #666;
+    transform: none;
+}
+
+.pixel-btn-large {
+    padding: 15px 30px;
+    font-size: 1rem;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    background: rgba(26, 26, 46, 0.9);
+    position: relative;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--accent);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.nav-menu {
+    transition: all 0.3s ease;
+}
+
+.logo h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.logo p {
+    font-size: 0.8rem;
+    color: var(--secondary);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-content h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    text-shadow: 4px 4px 0 var(--primary);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--light);
+}
+
+/* Sections */
+section {
+    padding: 3rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    text-shadow: 3px 3px 0 var(--primary);
+}
+
+/* Consoles */
+.console-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.console-card {
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.console-card:hover {
+    transform: translateY(-10px);
+}
+
+.console-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid var(--primary);
+}
+
+.console-card h3 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+}
+
+/* Games */
+.game-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.game-filters .pixel-btn {
+    margin: 0.5rem;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.game-card {
+    background: rgba(26, 26, 46, 0.8);
+    border: 2px solid var(--primary);
+    padding: 1rem;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.game-card[data-platform] {
+    position: relative;
+}
+
+.game-card[data-platform]::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--primary);
+    z-index: -1;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.game-card:hover::before {
+    opacity: 0.1;
+}
+
+.game-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid var(--secondary);
+}
+
+.game-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+}
+
+.game-price {
+    font-weight: bold;
+    color: #4caf50;
+    font-size: 1.2rem;
+}
+
+.game-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.game-platform {
+    display: inline-block;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid;
+}
+
+/* Platform-specific colors */
+.platform-ps5 {
+    background: linear-gradient(45deg, #0070f3, #0051cc);
+    border-color: #003d99;
+    box-shadow: 0 2px 4px rgba(0, 112, 243, 0.3);
+}
+
+.platform-ps4 {
+    background: linear-gradient(45deg, #003791, #0051cc);
+    border-color: #002266;
+    box-shadow: 0 2px 4px rgba(0, 55, 145, 0.3);
+}
+
+.platform-xbox {
+    background: linear-gradient(45deg, #107c10, #0e6b0e);
+    border-color: #0a5a0a;
+    box-shadow: 0 2px 4px rgba(16, 124, 16, 0.3);
+}
+
+.platform-pc {
+    background: linear-gradient(45deg, #cfd515, #adb300);
+    border-color: #cfd515;
+    box-shadow: 0 2px 4px rgba(255, 107, 53, 0.3);
+}
+
+.game-stock {
+    display: inline-block;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid;
+}
+
+.available {
+    background: linear-gradient(45deg, #4caf50, #45a049);
+    border-color: #3d8b40;
+    box-shadow: 0 2px 4px rgba(76, 175, 80, 0.3);
+}
+
+.out-of-stock {
+    background: linear-gradient(45deg, #f44336, #d32f2f);
+    border-color: #b71c1c;
+    box-shadow: 0 2px 4px rgba(244, 67, 54, 0.3);
+}
+
+/* Contact Section */
+.contact {
+    background: rgba(26, 26, 46, 0.9);
+    padding: 2rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.contact-info h3,
+.store-hours h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--primary);
+}
+
+.social-links {
+    margin-top: 1.5rem;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: var(--accent);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(26, 26, 46, 0.9);
+    margin-top: 2rem;
+}
+
+.footer-links {
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: var(--secondary);
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        flex-direction: column;
+        background: rgba(26, 26, 46, 0.98);
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: 0.3s;
+        z-index: 1000;
+        padding-top: 80px;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .nav-menu ul li {
+        margin: 1rem 0;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        padding: 15px 30px;
+    }
+
+    header {
+        padding: 1rem;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .logo p {
+        font-size: 0.7rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .console-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .game-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .pixel-border {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Pixel Art Animation */
+@keyframes pixelate {
+    0% { filter: none; }
+    50% { filter: url('#pixelate'); }
+    100% { filter: none; }
+}
+
+/* Add this SVG filter for pixelation effect */
+svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+}

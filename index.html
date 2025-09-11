@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroGame Haven - Pre-Owned Game Discs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="container">
+        <!-- Header -->
+        <header class="pixel-border">
+            <div class="logo">
+                <h1>RetroGame Haven</h1>
+                <p>Your Pixel Perfect Gaming Destination</p>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#home" class="pixel-btn nav-link">Home</a></li>
+                    <li><a href="#consoles" class="pixel-btn nav-link">Consoles</a></li>
+                    <li><a href="#games" class="pixel-btn nav-link">Games</a></li>
+                    <li><a href="#contact" class="pixel-btn nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero pixel-border">
+            <div class="hero-content">
+                <h2>Game On!</h2>
+                <p>Discover amazing pre-owned games at unbeatable prices</p>
+                <a href="#games" class="pixel-btn pixel-btn-large">Browse Collection</a>
+            </div>
+        </section>
+
+        <!-- Consoles Section -->
+        <section id="consoles" class="consoles">
+            <h2 class="section-title">Our Consoles</h2>
+            <div class="console-grid">
+                <div class="console-card pixel-border">
+                    <img src="https://via.placeholder.com/150" alt="PS5" class="console-img">
+                    <h3>PlayStation 5</h3>
+                    <p>Experience next-gen gaming</p>
+                </div>
+                <div class="console-card pixel-border">
+                    <img src="https://via.placeholder.com/150" alt="PS4" class="console-img">
+                    <h3>PlayStation 4</h3>
+                    <p>Classic gaming at its best</p>
+                </div>
+                <div class="console-card pixel-border">
+                    <img src="https://via.placeholder.com/150" alt="Xbox" class="console-img">
+                    <h3>Xbox Series X/S</h3>
+                    <p>Power your dreams</p>
+                </div>
+                <div class="console-card pixel-border">
+                    <img src="https://via.placeholder.com/150" alt="PC" class="console-img">
+                    <h3>PC Games</h3>
+                    <p>Endless possibilities</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games Section -->
+        <section id="games" class="games">
+            <h2 class="section-title">Featured Games</h2>
+            <div class="game-filters">
+                <button class="pixel-btn active" data-filter="all">All</button>
+                <button class="pixel-btn" data-filter="ps5">PS5</button>
+                <button class="pixel-btn" data-filter="ps4">PS4</button>
+                <button class="pixel-btn" data-filter="xbox">Xbox</button>
+                <button class="pixel-btn" data-filter="pc">PC</button>
+            </div>
+            <div class="game-grid" id="gameContainer">
+                <!-- Games will be loaded here via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact pixel-border">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Visit Our Store</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Pixel Street, Game City</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> info@retrogamehaven.com</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="store-hours">
+                    <h3>Store Hours</h3>
+                    <p>Monday - Friday: 10:00 AM - 8:00 PM</p>
+                    <p>Saturday: 11:00 AM - 9:00 PM</p>
+                    <p>Sunday: 12:00 PM - 6:00 PM</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pixel-border">
+            <p>&copy; 2025 RetroGame Haven. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Returns & Refunds</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
