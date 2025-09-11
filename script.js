@@ -1,11 +1,10 @@
-// Game Data
 const games = [
     {
         id: 1,
         title: "Elden Ring",
         platform: "ps5",
         price: 3299,
-        image: "https://via.placeholder.com/300x400/6a5acd/ffffff?text=Elden+Ring",
+        image: "https://images.igdb.com/igdb/image/upload/t_cover_big/co4jni.webp",
         condition: "Like New",
         inStock: true
     },
@@ -14,7 +13,7 @@ const games = [
         title: "God of War: Ragnarok",
         platform: "ps5",
         price: 4199,
-        image: "https://via.placeholder.com/300x400/ff6b6b/ffffff?text=God+of+War",
+        image: "https://images.igdb.com/igdb/image/upload/t_cover_big/co5s5v.webp",
         condition: "New",
         inStock: true
     },
@@ -23,7 +22,7 @@ const games = [
         title: "Horizon Forbidden West",
         platform: "ps4",
         price: 2499,
-        image: "https://via.placeholder.com/300x400/4ecdc4/ffffff?text=Horizon",
+        image: "https://images.igdb.com/igdb/image/upload/t_cover_big/co4rd0.webp",
         condition: "Good",
         inStock: false
     },
@@ -32,7 +31,7 @@ const games = [
         title: "The Last of Us Part II",
         platform: "ps4",
         price: 2099,
-        image: "https://via.placeholder.com/300x400/45b7d1/ffffff?text=The+Last+of+Us",
+        image: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2eua.webp",
         condition: "Good",
         inStock: true
     },
@@ -41,7 +40,7 @@ const games = [
         title: "Halo Infinite",
         platform: "xbox",
         price: 2899,
-        image: "https://via.placeholder.com/300x400/96ceb4/ffffff?text=Halo+Infinite",
+        image: "https://images.igdb.com/igdb/image/upload/t_cover_big/co4jy6.webp",
         condition: "Like New",
         inStock: true
     },
@@ -50,7 +49,7 @@ const games = [
         title: "Forza Horizon 5",
         platform: "xbox",
         price: 3299,
-        image: "https://via.placeholder.com/300x400/ffeead/333333?text=Forza+5",
+        image: "https://images.igdb.com/igdb/image/upload/t_cover_big/co3p2d.webp",
         condition: "New",
         inStock: false
     },
@@ -59,7 +58,7 @@ const games = [
         title: "Cyberpunk 2077",
         platform: "pc",
         price: 2499,
-        image: "https://via.placeholder.com/300x400/ffcc5c/333333?text=Cyberpunk",
+        image: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2rpf.webp",
         condition: "Good",
         inStock: true
     },
@@ -68,13 +67,12 @@ const games = [
         title: "Red Dead Redemption 2",
         platform: "pc",
         price: 2999,
-        image: "https://via.placeholder.com/300x400/ff6f69/ffffff?text=RDR2",
+        image: "https://images.igdb.com/igdb/image/upload/t_cover_big/co1q1f.webp",
         condition: "Excellent",
         inStock: false
     }
 ];
 
-// DOM Elements
 const gameContainer = document.getElementById('gameContainer');
 const filterButtons = document.querySelectorAll('.game-filters .pixel-btn');
 
@@ -85,7 +83,6 @@ function init() {
     addPixelArtEffect();
 }
 
-// Display games in the grid
 function displayGames(gamesToDisplay) {
     gameContainer.innerHTML = '';
     
@@ -120,7 +117,6 @@ function displayGames(gamesToDisplay) {
     });
 }
 
-// Get platform full name
 function getPlatformName(platform) {
     const platforms = {
         'ps5': 'PS5',
@@ -131,9 +127,7 @@ function getPlatformName(platform) {
     return platforms[platform] || platform;
 }
 
-// Setup event listeners
 function setupEventListeners() {
-    // Hamburger menu
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
     
@@ -143,7 +137,6 @@ function setupEventListeners() {
             navMenu.classList.toggle('active');
         });
         
-        // Close menu when clicking on nav links
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -152,7 +145,6 @@ function setupEventListeners() {
             });
         });
         
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                 hamburger.classList.remove('active');
@@ -161,12 +153,9 @@ function setupEventListeners() {
         });
     }
     
-    // Filter buttons
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
             button.classList.add('active');
             
             const filter = button.dataset.filter;
@@ -174,13 +163,11 @@ function setupEventListeners() {
         });
     });
 
-    // Contact form submission (if added later)
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', handleContactSubmit);
     }
 
-    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -198,7 +185,6 @@ function setupEventListeners() {
     });
 }
 
-// Filter games based on platform
 function filterGames(platform) {
     if (platform === 'all') {
         displayGames(games);
@@ -209,17 +195,13 @@ function filterGames(platform) {
     displayGames(filteredGames);
 }
 
-// Handle contact form submission
 function handleContactSubmit(e) {
     e.preventDefault();
-    // In a real implementation, you would send this data to a server
     alert('Thank you for your message! We will get back to you soon.');
     e.target.reset();
 }
 
-// Add pixel art effect to elements
 function addPixelArtEffect() {
-    // Add pixelation effect on hover for game cards
     document.addEventListener('mouseover', (e) => {
         if (e.target.classList.contains('game-card')) {
             e.target.style.animation = 'pixelate 0.3s';
@@ -229,7 +211,6 @@ function addPixelArtEffect() {
         }
     });
 
-    // Add click effect to buttons
     const buttons = document.querySelectorAll('.pixel-btn');
     buttons.forEach(button => {
         button.addEventListener('mousedown', function() {
@@ -249,7 +230,6 @@ function addPixelArtEffect() {
     });
 }
 
-// Add SVG filter for pixelation effect
 function addSvgFilter() {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     const filter = document.createElementNS("http://www.w3.org/2000/svg", "filter");
@@ -285,7 +265,6 @@ function addSvgFilter() {
     document.body.appendChild(svg);
 }
 
-// Add WhatsApp click handler
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('inquire-btn') && !e.target.disabled) {
         const gameTitle = e.target.dataset.game;
@@ -295,5 +274,4 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Initialize the page when DOM is loaded
 document.addEventListener('DOMContentLoaded', init);

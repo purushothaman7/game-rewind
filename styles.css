@@ -1,4 +1,3 @@
-/* Base Styles */
 :root {
     --primary: #6a5acd;
     --secondary: #9370db;
@@ -48,7 +47,6 @@ body {
     z-index: 1;
 }
 
-/* Pixel Border */
 .pixel-border {
     border: 4px solid var(--primary);
     position: relative;
@@ -76,7 +74,6 @@ body {
     right: -7px;
 }
 
-/* Buttons */
 .pixel-btn {
     background: var(--primary);
     color: white;
@@ -120,7 +117,6 @@ body {
     font-size: 1rem;
 }
 
-/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -131,7 +127,6 @@ header {
     position: relative;
 }
 
-/* Hamburger Menu */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -185,7 +180,6 @@ nav ul li {
     margin-left: 1.5rem;
 }
 
-/* Hero Section */
 .hero {
     text-align: center;
     padding: 4rem 2rem;
@@ -210,7 +204,6 @@ nav ul li {
     color: var(--light);
 }
 
-/* Sections */
 section {
     padding: 3rem 0;
 }
@@ -224,7 +217,6 @@ section {
     text-shadow: 3px 3px 0 var(--primary);
 }
 
-/* Consoles */
 .console-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -257,7 +249,6 @@ section {
     font-size: 1rem;
 }
 
-/* Games */
 .game-filters {
     display: flex;
     justify-content: center;
@@ -348,7 +339,6 @@ section {
     border: 2px solid;
 }
 
-/* Platform-specific colors */
 .platform-ps5 {
     background: linear-gradient(45deg, #0070f3, #0051cc);
     border-color: #003d99;
@@ -396,7 +386,6 @@ section {
     box-shadow: 0 2px 4px rgba(244, 67, 54, 0.3);
 }
 
-/* Contact Section */
 .contact {
     background: rgba(26, 26, 46, 0.9);
     padding: 2rem;
@@ -442,7 +431,6 @@ section {
     color: var(--accent);
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 1.5rem;
@@ -465,7 +453,6 @@ footer {
     color: var(--accent);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -548,14 +535,12 @@ footer {
     }
 }
 
-/* Pixel Art Animation */
 @keyframes pixelate {
     0% { filter: none; }
     50% { filter: url('#pixelate'); }
     100% { filter: none; }
 }
 
-/* Add this SVG filter for pixelation effect */
 svg {
     position: absolute;
     width: 0;
