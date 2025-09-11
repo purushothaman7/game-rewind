@@ -22,7 +22,7 @@ const games = [
         title: "Horizon Forbidden West",
         platform: "ps4",
         price: 2499,
-        image: "https://images.igdb.com/igdb/image/upload/t_cover_big/co4rd0.webp",
+        image: "https://image.api.playstation.com/vulcan/ap/rnd/202107/3100/HO8vkO9pfXhwbHi5WHECQJdN.png",
         condition: "Good",
         inStock: false
     },
@@ -31,7 +31,7 @@ const games = [
         title: "The Last of Us Part II",
         platform: "ps4",
         price: 2099,
-        image: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2eua.webp",
+        image: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/TLOU_P2_Box_Art_2.png/250px-TLOU_P2_Box_Art_2.png",
         condition: "Good",
         inStock: true
     },
@@ -40,7 +40,7 @@ const games = [
         title: "Halo Infinite",
         platform: "xbox",
         price: 2899,
-        image: "https://images.igdb.com/igdb/image/upload/t_cover_big/co4jy6.webp",
+        image: "https://upload.wikimedia.org/wikipedia/en/1/14/Halo_Infinite.png",
         condition: "Like New",
         inStock: true
     },
@@ -49,7 +49,7 @@ const games = [
         title: "Forza Horizon 5",
         platform: "xbox",
         price: 3299,
-        image: "https://images.igdb.com/igdb/image/upload/t_cover_big/co3p2d.webp",
+        image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/86/Forza_Horizon_5_cover_art.jpg/250px-Forza_Horizon_5_cover_art.jpg",
         condition: "New",
         inStock: false
     },
@@ -58,7 +58,7 @@ const games = [
         title: "Cyberpunk 2077",
         platform: "pc",
         price: 2499,
-        image: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2rpf.webp",
+        image: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Cyberpunk_2077_box_art.jpg/250px-Cyberpunk_2077_box_art.jpg",
         condition: "Good",
         inStock: true
     },

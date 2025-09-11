@@ -546,3 +546,40 @@ svg {
     width: 0;
     height: 0;
 }
+
+.legal-content {
+    padding: 2rem;
+    background: rgba(26, 26, 46, 0.9);
+}
+
+.legal-text {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.legal-text h2 {
+    color: var(--accent);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    margin: 2rem 0 1rem 0;
+}
+
+.legal-text p {
+    margin-bottom: 1rem;
+    color: var(--light);
+}
+
+.legal-text ul, .legal-text ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+    color: var(--light);
+}
+
+.legal-text li {
+    margin-bottom: 0.5rem;
+}
+
+.legal-text strong {
+    color: var(--accent);
+}
