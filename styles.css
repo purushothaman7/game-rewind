@@ -583,3 +583,250 @@ svg {
 .legal-text strong {
     color: var(--accent);
 }
+
+/* Cart Styles */
+.cart-count {
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    min-width: 18px;
+    text-align: center;
+    display: none;
+}
+
+#cartIcon {
+    position: relative;
+}
+
+.cart-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.cart-modal-content {
+    background: var(--dark);
+    margin: 5% auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--primary);
+}
+
+.cart-header h3 {
+    color: var(--accent);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-items {
+    padding: 1rem 2rem;
+    min-height: 200px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--primary);
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 1rem;
+    border: 2px solid var(--secondary);
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info h4 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.cart-item-platform, .cart-item-condition {
+    font-size: 0.8rem;
+    color: var(--secondary);
+    margin: 0.2rem 0;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.quantity-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-btn:hover {
+    background: var(--secondary);
+}
+
+.quantity {
+    padding: 0 1rem;
+    font-weight: bold;
+    color: var(--light);
+}
+
+.remove-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: 1rem;
+}
+
+.remove-btn:hover {
+    background: #ff5252;
+}
+
+.cart-item-price {
+    font-weight: bold;
+    color: #4caf50;
+    font-size: 1.1rem;
+    margin-left: 1rem;
+}
+
+.cart-footer {
+    padding: 1rem 2rem;
+    border-top: 2px solid var(--primary);
+}
+
+.cart-total {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+.cart-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.empty-cart {
+    text-align: center;
+    color: var(--secondary);
+    font-style: italic;
+    padding: 2rem 0;
+}
+
+.game-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.game-actions .pixel-btn {
+    flex: 1;
+    min-width: 120px;
+    font-size: 0.7rem;
+    padding: 8px 12px;
+}
+
+.cart-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--accent);
+    color: white;
+    padding: 1rem 2rem;
+    border: 2px solid var(--primary);
+    box-shadow: 4px 4px 0 var(--dark);
+    z-index: 3000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+}
+
+.cart-notification.show {
+    transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+    .cart-modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .cart-header {
+        padding: 1rem;
+    }
+    
+    .cart-items {
+        padding: 1rem;
+    }
+    
+    .cart-footer {
+        padding: 1rem;
+    }
+    
+    .cart-actions {
+        flex-direction: column;
+    }
+    
+    .game-actions {
+        flex-direction: column;
+    }
+    
+    .game-actions .pixel-btn {
+        min-width: auto;
+    }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Processing - GameRewind</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        .callback-container {
+            max-width: 600px;
+            margin: 4rem auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .callback-card {
+            background: rgba(26, 26, 46, 0.9);
+            padding: 3rem 2rem;
+            border: 4px solid var(--primary);
+            box-shadow: 8px 8px 0 var(--accent);
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            border: 6px solid var(--primary);
+            border-radius: 50%;
+            border-top-color: var(--accent);
+            animation: spin 1s ease-in-out infinite;
+            margin-bottom: 2rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="callback-container">
+        <div class="callback-card">
+            <div class="loading-spinner"></div>
+            <h2 style="color: var(--accent); font-family: 'Press Start 2P', cursive; margin-bottom: 1rem;">
+                Processing Payment...
+            </h2>
+            <p style="color: var(--light); font-size: 1.1rem;">
+                Please wait while we process your payment with PhonePe.
+            </p>
+            <p style="color: var(--secondary); font-size: 0.9rem; margin-top: 2rem;">
+                You will be redirected automatically.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const transactionId = urlParams.get('txnId');
+            
+            if (transactionId) {
+                setTimeout(() => {
+                    window.location.href = `payment-success.html?txnId=${transactionId}`;
+                }, 2000);
+            } else {
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>

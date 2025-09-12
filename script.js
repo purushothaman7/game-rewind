@@ -109,7 +109,14 @@ function displayGames(gamesToDisplay) {
                     <span class="game-platform platform-${game.platform}">${getPlatformName(game.platform)}</span>
                     <span class="game-stock ${stockStatus}">${stockText}</span>
                 </div>
-                <button class="pixel-btn inquire-btn" data-game="${game.title}" ${!game.inStock ? 'disabled' : ''}>Inquire Now</button>
+                <div class="game-actions">
+                    <button class="pixel-btn add-to-cart-btn" data-game-id="${game.id}" ${!game.inStock ? 'disabled' : ''}>
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                    <button class="pixel-btn inquire-btn" data-game="${game.title}" ${!game.inStock ? 'disabled' : ''}>
+                        <i class="fab fa-whatsapp"></i> Inquire
+                    </button>
+                </div>
             </div>
         `;
         
@@ -271,6 +278,33 @@ document.addEventListener('click', (e) => {
         const whatsappMessage = `Hi, I'm interested in ${gameTitle}. Is it still available?`;
         const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(whatsappMessage)}`;
         window.open(whatsappUrl, '_blank');
+    }
+    
+    if (e.target.classList.contains('add-to-cart-btn') && !e.target.disabled) {
+        const gameId = parseInt(e.target.dataset.gameId);
+        cart.addItem(gameId);
+    }
+});
+
+// Cart Modal Functions
+function toggleCartModal() {
+    const modal = document.getElementById('cartModal');
+    modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
+}
+
+function proceedToCheckout() {
+    if (cart.items.length === 0) {
+        alert('Your cart is empty!');
+        return;
+    }
+    window.location.href = 'checkout.html';
+}
+
+// Close modal when clicking outside
+window.addEventListener('click', (e) => {
+    const modal = document.getElementById('cartModal');
+    if (e.target === modal) {
+        modal.style.display = 'none';
     }
 });
 

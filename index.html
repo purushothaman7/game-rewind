@@ -27,6 +27,12 @@
                     <li><a href="#consoles" class="pixel-btn nav-link">Consoles</a></li>
                     <li><a href="#games" class="pixel-btn nav-link">Games</a></li>
                     <li><a href="#contact" class="pixel-btn nav-link">Contact</a></li>
+                    <li>
+                        <button class="pixel-btn nav-link" id="cartIcon" onclick="toggleCartModal()">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            <span id="cartCount" class="cart-count">0</span>
+                        </button>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -112,6 +118,27 @@
         </footer>
     </div>
 
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-modal-content pixel-border">
+            <div class="cart-header">
+                <h3>Shopping Cart</h3>
+                <button class="close-cart" onclick="toggleCartModal()">&times;</button>
+            </div>
+            <div id="cartItems" class="cart-items"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: <span id="cartTotal">₹0</span></strong>
+                </div>
+                <div class="cart-actions">
+                    <button class="pixel-btn" onclick="cart.clearCart()">Clear Cart</button>
+                    <button class="pixel-btn pixel-btn-large" onclick="proceedToCheckout()">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script src="cart.js"></script>
+    <script src="phonepe-config.js"></script>
 </body>
 </html>
