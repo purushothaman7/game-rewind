@@ -13,8 +13,11 @@
     <div class="container">
         <header class="pixel-border">
             <div class="logo">
-                <h1>GameRewind</h1>
-                <p>Rewind to Gaming's Greatest Hits</p>
+                <img src="./logo.png" alt="GameRewind Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1>GameRewind</h1>
+                    <p>Rewind to Gaming's Greatest Hits</p>
+                </div>
             </div>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -24,54 +27,68 @@
             <nav class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="#home" class="pixel-btn nav-link">Home</a></li>
-                    <li><a href="#consoles" class="pixel-btn nav-link">Consoles</a></li>
-                    <li><a href="#games" class="pixel-btn nav-link">Games</a></li>
+                    <li><a href="#services" class="pixel-btn nav-link">Services</a></li>
+                    <li><a href="#process" class="pixel-btn nav-link">Process</a></li>
                     <li><a href="#contact" class="pixel-btn nav-link">Contact</a></li>
+                    <!-- Cart functionality preserved but hidden
                     <li>
                         <button class="pixel-btn nav-link" id="cartIcon" onclick="toggleCartModal()">
                             <i class="fas fa-shopping-cart"></i> Cart
                             <span id="cartCount" class="cart-count">0</span>
                         </button>
                     </li>
+                    -->
                 </ul>
             </nav>
         </header>
 
         <section id="home" class="hero pixel-border">
             <div class="hero-content">
-                <h2>Game On!</h2>
-                <p>Discover amazing pre-owned games at unbeatable prices</p>
-                <a href="#games" class="pixel-btn pixel-btn-large">Browse Collection</a>
-            </div>
-        </section>
-
-        <section id="consoles" class="consoles">
-            <h2 class="section-title">Our Consoles</h2>
-            <div class="console-grid">
-                <div class="console-card pixel-border">
-                    <img src="https://via.placeholder.com/150" alt="PS5" class="console-img">
-                    <h3>PlayStation 5</h3>
-                    <p>Experience next-gen gaming</p>
-                </div>
-                <div class="console-card pixel-border">
-                    <img src="https://via.placeholder.com/150" alt="PS4" class="console-img">
-                    <h3>PlayStation 4</h3>
-                    <p>Classic gaming at its best</p>
-                </div>
-                <div class="console-card pixel-border">
-                    <img src="https://via.placeholder.com/150" alt="Xbox" class="console-img">
-                    <h3>Xbox Series X/S</h3>
-                    <p>Power your dreams</p>
-                </div>
-                <div class="console-card pixel-border">
-                    <img src="https://via.placeholder.com/150" alt="PC" class="console-img">
-                    <h3>PC Games</h3>
-                    <p>Endless possibilities</p>
+                <h2>WE BUY & SELL Game Discs</h2>
+                <p>Discover Amazing Pre-Owned Games - Trade Your Collection Today!</p>
+                <div class="hero-buttons">
+                    <a href="https://forms.google.com/your-contact-form" target="_blank" class="pixel-btn pixel-btn-large">Sell Your Games</a>
+                    <a href="https://forms.google.com/your-inquiry-form" target="_blank" class="pixel-btn pixel-btn-large">Get Quote</a>
                 </div>
             </div>
         </section>
 
-        <section id="games" class="games">
+        <section id="services" class="services">
+            <h2 class="section-title">Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card pixel-border">
+                    <div class="service-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Buy Your Games</h3>
+                    <p>Get instant cash for your pre-owned game collection</p>
+                </div>
+                <div class="service-card pixel-border">
+                    <div class="service-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Best Prices Guaranteed</h3>
+                    <p>Competitive rates for buying and selling game discs</p>
+                </div>
+                <div class="service-card pixel-border">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Quality Inspection</h3>
+                    <p>Every disc is tested and verified before sale</p>
+                </div>
+                <div class="service-card pixel-border">
+                    <div class="service-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Fast Collection & Delivery</h3>
+                    <p>Quick pickup and delivery across Chennai</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games section preserved but hidden for future use
+        <section id="games" class="games" style="display: none;">
             <h2 class="section-title">Featured Games</h2>
             <div class="game-filters">
                 <button class="pixel-btn active" data-filter="all">All</button>
@@ -83,12 +100,48 @@
             <div class="game-grid" id="gameContainer">
             </div>
         </section>
+        -->
+
+        <section id="process" class="process">
+            <h2 class="section-title">How Things Work</h2>
+            <div class="process-grid">
+                <div class="process-step pixel-border">
+                    <div class="step-number">01</div>
+                    <h3>SUBMIT YOUR COLLECTION</h3>
+                    <p>Share details of your game collection through our online form or WhatsApp. Include game titles, platform (PS4/PS5/Xbox), and condition. We'll provide you with an instant quote based on current market rates and game demand.</p>
+                </div>
+                <div class="process-step pixel-border">
+                    <div class="step-number">02</div>
+                    <h3>QUALITY INSPECTION</h3>
+                    <p>Our team carefully inspects each game disc for scratches, functionality, and completeness. We test every disc to ensure it works perfectly. Games with original cases and manuals get premium pricing.</p>
+                </div>
+                <div class="process-step pixel-border">
+                    <div class="step-number">03</div>
+                    <h3>INSTANT PAYMENT</h3>
+                    <p>Once inspection is complete, receive immediate payment via UPI, bank transfer, or cash. No waiting periods or complicated procedures. Fair and transparent pricing for all transactions.</p>
+                </div>
+                <div class="process-step pixel-border">
+                    <div class="step-number">04</div>
+                    <h3>SAFE COLLECTION & DELIVERY</h3>
+                    <p>We provide secure pickup from your location across Chennai and surrounding areas. For purchases, games are carefully packaged and delivered to ensure they reach you in perfect condition.</p>
+                </div>
+            </div>
+        </section>
 
         <section id="contact" class="contact pixel-border">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-grid">
+            <h2 class="section-title">Get in touch</h2>
+            <div class="contact-content">
+                <p class="contact-description">Ready to sell your games or looking for specific titles? Get in touch with us for instant quotes and the best deals on pre-owned game discs!</p>
+                <div class="contact-buttons">
+                    <a href="https://forms.google.com/your-contact-form" target="_blank" class="pixel-btn pixel-btn-large contact-btn">
+                        <i class="fas fa-gamepad"></i> Sell Your Games
+                    </a>
+                    <a href="https://forms.google.com/your-inquiry-form" target="_blank" class="pixel-btn pixel-btn-large contact-btn">
+                        <i class="fas fa-search"></i> Find Games
+                    </a>
+                </div>
                 <div class="contact-info">
-                    <h3>Visit Our Store</h3>
+                    <h3>@ GameRewind Store</h3>
                     <p><i class="fas fa-map-marker-alt"></i> 123 kolathur, Chennai, Tamil Nadu 600017</p>
                     <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
                     <p><i class="fas fa-envelope"></i> info@gamerewind.com</p>
@@ -98,12 +151,6 @@
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
                     </div>
-                </div>
-                <div class="store-hours">
-                    <h3>Store Hours</h3>
-                    <p>Monday - Friday: 10:00 AM - 8:00 PM</p>
-                    <p>Saturday: 11:00 AM - 9:00 PM</p>
-                    <p>Sunday: 12:00 PM - 6:00 PM</p>
                 </div>
             </div>
         </section>
@@ -118,7 +165,8 @@
         </footer>
     </div>
 
-    <div id="cartModal" class="cart-modal">
+    <!-- Cart modal preserved but hidden for future use
+    <div id="cartModal" class="cart-modal" style="display: none;">
         <div class="cart-modal-content pixel-border">
             <div class="cart-header">
                 <h3>Shopping Cart</h3>
@@ -136,6 +184,7 @@
             </div>
         </div>
     </div>
+    -->
 
     <script src="script.js"></script>
     <script src="cart.js"></script>
